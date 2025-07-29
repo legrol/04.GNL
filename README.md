@@ -37,34 +37,34 @@ Este proyecto refuerza conceptos de:
 
 1. Incluye la cabecera en tu programa:
 
-#include "get_next_line.h"
+    #include "get_next_line.h"
 
 2. Enlaza con la biblioteca al compilar:
 
-gcc -L. -lgnl tu_programa.c -o tu_programa
+    gcc -L. -lgnl tu_programa.c -o tu_programa
 
 3. Invoca la función en tu código:
 
-#include <fcntl.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include "get_next_line.h"
+    #include <fcntl.h>
+    #include <stdio.h>
+    #include <stdlib.h>
+    #include "get_next_line.h"
 
-int main(void)
-{
-    int   fd = open("archivo.txt", O_RDONLY);
-    char *line;
-
-    if (fd < 0)
-        return (1);
-    while ((line = get_next_line(fd)))
+    int main(void)
     {
-        printf("%s", line);
-        free(line);
+        int   fd = open("archivo.txt", O_RDONLY);
+        char *line;
+
+        if (fd < 0)
+            return (1);
+        while ((line = get_next_line(fd)))
+        {
+            printf("%s", line);
+            free(line);
+        }
+        close(fd);
+        return (0);
     }
-    close(fd);
-    return (0);
-}
 
 
 
