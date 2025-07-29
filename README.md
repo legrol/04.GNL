@@ -37,11 +37,11 @@ Este proyecto refuerza conceptos de:
 
     1. Incluye la cabecera en tu programa:
     
-        #include "get_next_line.h"
+            #include "get_next_line.h"
     
     2. Enlaza con la biblioteca al compilar:
     
-        gcc -L. -lgnl tu_programa.c -o tu_programa
+            gcc -L. -lgnl tu_programa.c -o tu_programa
 
     3. Invoca la función en tu código:
     
