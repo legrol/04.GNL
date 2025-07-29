@@ -29,7 +29,7 @@ Este proyecto refuerza conceptos de:
 
 - make clean — Elimina los objetos intermedios (*.o).
 
-- make fclean— Además de clean, elimina libgnl.a.
+- make fclean — Además de clean, elimina libgnl.a.
 
 - make re — Ejecuta fclean y luego all.
 
