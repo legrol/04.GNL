@@ -23,15 +23,15 @@ Este proyecto refuerza conceptos de:
 
 ![Compilación](https://img.shields.io/badge/Compilación-blue?style=for-the-badge)
 
-make
+    - make
 
-    make all — Compila get_next_line.c y get_next_line_utils.c, genera libgnl.a.
+    - make all — Compila get_next_line.c y get_next_line_utils.c, genera libgnl.a.
 
-    make clean — Elimina los objetos (*.o).
+    - make clean — Elimina los objetos (*.o).
 
-    make fclean— Además de clean, elimina libgnl.a.
+    - make fclean— Además de clean, elimina libgnl.a.
 
-    make re — Ejecuta fclean y luego all.
+    - make re — Ejecuta fclean y luego all.
 
 ![Uso](https://img.shields.io/badge/Uso-yellow?style=for-the-badge)
 
