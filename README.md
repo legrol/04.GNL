@@ -35,7 +35,7 @@ Este proyecto refuerza conceptos de:
 
 ![Uso](https://img.shields.io/badge/Uso-yellow?style=for-the-badge)
 
-    1. Incluye la cabecera en tu programa:
+ 1. Incluye la cabecera en tu programa:
     
             #include "get_next_line.h"
     
