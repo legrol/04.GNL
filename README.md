@@ -22,38 +22,48 @@ Este proyecto refuerza conceptos de:
 ```
 
 ![Compilación](https://img.shields.io/badge/Compilación-blue?style=for-the-badge)
+make
 
-    - make
+make all — Compila get_next_line.c y get_next_line_utils.c, genera libgnl.a.
 
-    - make all — Compila get_next_line.c y get_next_line_utils.c, genera libgnl.a.
+make clean — Elimina los objetos intermedios (*.o).
 
-    - make clean — Elimina los objetos (*.o).
+make fclean— Además de clean, elimina libgnl.a.
 
-    - make fclean— Además de clean, elimina libgnl.a.
-
-    - make re — Ejecuta fclean y luego all.
+make re — Ejecuta fclean y luego all.
 
 ![Uso](https://img.shields.io/badge/Uso-yellow?style=for-the-badge)
 
-Incluye la cabecera en tu programa:
+1. Incluye la cabecera en tu programa:
 
-  #include "get_next_line.h"
+#include "get_next_line.h"
 
-Enlaza con la biblioteca al compilar:
+2. Enlaza con la biblioteca al compilar:
 
-  gcc -L. -lgnl tu_programa.c -o tu_programa
+gcc -L. -lgnl tu_programa.c -o tu_programa
 
-Invoca la función:
+3. Invoca la función en tu código:
 
-  char *line;
-  int  fd = open("archivo.txt", O_RDONLY);
-  
-  while ((line = get_next_line(fd)))
-  {
-      printf("%s", line);
-      free(line);
-  }
-  close(fd);
+#include <fcntl.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "get_next_line.h"
+
+int main(void)
+{
+    int   fd = open("archivo.txt", O_RDONLY);
+    char *line;
+
+    if (fd < 0)
+        return (1);
+    while ((line = get_next_line(fd)))
+    {
+        printf("%s", line);
+        free(line);
+    }
+    close(fd);
+    return (0);
+}
 
 
 
